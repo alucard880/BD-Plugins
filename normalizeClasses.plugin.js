@@ -23,12 +23,10 @@
 	WScript.Quit();
 @else@*/
 
-// TODO: Add settings to control interval length.
-
 var normalizeClasses = function(){};
 var normalizeClassesInterval;
 
-var normalizeClasses = function() {
+var normalizeClassesMain = function() {
 	var everything = document.body.getElementsByTagName("*");
 	for (let i=0; i<everything.length; i++) {
 		let el = everything[i];
@@ -51,7 +49,7 @@ normalizeClasses.prototype.getVersion = function(){ return "1.0b"; };
 normalizeClasses.prototype.getAuthor = function(){ return "Artics"; };
 
 normalizeClasses.prototype.start = function(){
-	normalizeClassesInterval = setInterval(normalizeClasses, 2000);
+	normalizeClassesInterval = setInterval(normalizeClassesMain, 2000);
 };
 
 normalizeClasses.prototype.stop = function(){
